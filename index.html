@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifa Player Rating</title>
+</head>
+<body>
+	
+<div class="data">
+    <h3>FIFA Player Rating</h3>
+    <form action="{{url_for('predict')}}"method="POST">
+        <h5>General Information</h5>
+        <input type="number" name="potential" placeholder="Potential" required="required"/>
+        <input type="number" name="wage_eur" placeholder="Wage (in euros)" required="required"/>
+        <input type="number" name="age" placeholder="Age" required="required"/>
+        <input type="number" name="international_reputation" placeholder="International Reputation" required="required"/>
+        
+        <h5>General Skills</h5>
+        <input type="number" name="skill_moves" placeholder="Number of Skill Moves" required="required"/>
+        <input type="number" name="skill_dribbling" placeholder="Dribbling" required="required"/>
+        <input type="number" name="skill_curve" placeholder="Curve" required="required"/>
+        <input type="number" name="skill_fk_accuracy" placeholder="Free Kick Accuracy" required="required"/>
+        <input type="number" name="skill_long_passing" placeholder="Long Passing" required="required"/>
+        <input type="number" name="skill_ball_control" placeholder="Ball control" required="required"/>
+        
+        <input type="number" name="pace" placeholder="Pace score" required="required"/>
+        <input type="number" name="defending" placeholder="Defending score" required="required"/>
+        
+        <h5>Attacking Skill Ratings</h5>
+        <input type="number" name="attacking_finishing" placeholder="Finishing" required="required"/>
+        <input type="number" name="attacking_crossing" placeholder="Crossing" required="required"/>
+        <input type="number" name="attacking_heading_accuracy" placeholder="Heading Accuracy" required="required"/>
+        <input type="number" name="attacking_short_passing" placeholder="Short Passing" required="required"/>
+        <input type="number" name="attacking_volleys" placeholder="Volleys" required="required"/>
+        
+        <h5>Movement Skills Ratings</h5>
+        <input type="number" name="movement_acceleration" placeholder="Acceleration" required="required"/>
+        <input type="number" name="movement_sprint_speed" placeholder="Sprint speed" required="required"/>
+        <input type="number" name="movement_agility" placeholder="Agility" required="required"/>
+        <input type="number" name="movement_reactions" placeholder="Reactions" required="required"/>
+        <input type="number" name="movement_balance" placeholder="Balance" required="required"/>
+        
+        <h5>Power Skills Ratings</h5>
+        <input type="number" name="power_shot_power" placeholder="Shot Power" required="required"/>
+        <input type="number" name="power_jumping" placeholder="Jumping" required="required"/>
+        <input type="number" name="power_stamina" placeholder="Stamina" required="required"/>
+        <input type="number" name="power_strength" placeholder="Strength" required="required"/>
+        <input type="number" name="power_long_shots" placeholder="Long Shots" required="required"/>
+        
+        <h5>Mentality Ratings</h5>
+        <input type="number" name="mentality_positioning" placeholder="Positioning" required="required"/>
+        <input type="number" name="mentality_vision" placeholder="Vision" required="required"/>
+        <input type="number" name="mentality_penalties" placeholder="Penalties" required="required"/>
+        <input type="number" name="mentality_composure" placeholder="Composure" required="required"/>
+        
+        <h5>Defending Ratings</h5>
+        <input type="number" name="defending_marking_awareness" placeholder="Marking Awareness" required="required"/>
+        <input type="number" name="defending_standing_tackle" placeholder="Standing Tackle" required="required"/>
+        <input type="number" name="defending_sliding_tackle" placeholder="Sliding Tackle" required="required"/>
+        
+        <h5>Goalkeeping Ratings</h5>
+        <input type="number" name="goalkeeping_diving" placeholder="Diving" required="required"/>
+        <input type="number" name="goalkeeping_handling" placeholder="Handling" required="required"/>
+        <input type="number" name="goalkeeping_kicking" placeholder="Kicking" required="required"/>
+        <input type="number" name="goalkeeping_positioning" placeholder="Positioning" required="required"/>
+        <input type="number" name="goalkeeping_reflexes" placeholder="Reflexes" required="required"/>
+        <input type="number" name="goalkeeping_speed" placeholder="Speed" required="required"/>
+        
+        <h5>Positional ratings</h5>
+        <input type="number" name="ls" placeholder="Left Striker" required="required"/>
+        <input type="number" name="st" placeholder="Striker" required="required"/>
+        <input type="number" name="rs" placeholder="Right Striker" required="required"/>
+        <input type="number" name="lw" placeholder="Left Wing" required="required"/>
+        <input type="number" name="lf" placeholder="Left Forward" required="required"/>
+        <input type="number" name="cf" placeholder="Center Forward" required="required"/>
+        <input type="number" name="rf" placeholder="Right Forward" required="required"/>
+        <input type="number" name="rw" placeholder="Right Wing" required="required"/>
+        <input type="number" name="lam" placeholder="Left Attacking Midfielder" required="required"/>
+        <input type="number" name="cam" placeholder="Center Attacking Midfielder" required="required"/>
+        <input type="number" name="ram" placeholder="Right Attacking Midfielder" required="required"/>
+        <input type="number" name="lm" placeholder="Left Midfielder" required="required"/>
+        <input type="number" name="lcm" placeholder="Left Center Midfielder" required="required"/>
+        <input type="number" name="cm" placeholder="Center Midfielder" required="required"/>
+        <input type="number" name="rcm" placeholder="Right Center Midfielder" required="required"/>
+        <input type="number" name="rm" placeholder="Right Midfielder" required="required"/>
+        <input type="number" name="lwb" placeholder="Left Wing Back" required="required"/>
+        <input type="number" name="ldm" placeholder="Left Defensive Midfielder" required="required"/>
+        <input type="number" name="cdm" placeholder="Center Defensive Midfielder" required="required"/>
+        <input type="number" name="rdm" placeholder="Right Defensive Midfielder" required="required"/>
+        <input type="number" name="rwb" placeholder="Right Wing Back" required="required"/>
+        <input type="number" name="lb" placeholder="Left Back" required="required"/>
+        <input type="number" name="lcb" placeholder="Left Centre Back" required="required"/>
+        <input type="number" name="cb" placeholder="Centre Back" required="required"/>
+        <input type="number" name="rcb" placeholder="Right Centre Back" required="required"/>
+        <input type="number" name="rb" placeholder="Right Back" required="required"/>
+        <input type="number" name="gk" placeholder="Goalkeeper" required="required"/>
+        
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <br>
+
+    {{ prediction_number }}
+	
+</div>
+</body>
+</html>
